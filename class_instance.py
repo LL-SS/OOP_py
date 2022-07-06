@@ -23,6 +23,15 @@ class User:
         else:
             print('Login failed!')
 
+    # 클래스 메소드
+    # 인스턴스 변수(self)를 사용하지 않으므로 클래스 메소드로 작성
+    # 인스턴스 변수는 클래스 변수를 가져올 수 있으나,
+    # 클래스 변수는 인스턴스 변수를 가져올 수 없음, 따라서 둘 다 사용할 때는 인스턴스 메소드 사용
+    # 인스턴스 변수가 하나도 없을 때 클래스 변수는 사용 가능
+    @classmethod
+    def number_of_users(cls): # 첫번째 파라미터로 클래스 자동 전달
+        print(f'총 유저 수는 {cls.count}명 입니다.')
+
 def add_print_to(original):
     def wrapper():
         print('함수 시작')
@@ -49,3 +58,5 @@ print(User.count)
 print(user1.count)
 
 print_hello()
+
+User.number_of_users()
